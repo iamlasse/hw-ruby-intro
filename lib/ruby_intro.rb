@@ -15,8 +15,8 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  puts arr.combination(2).to_a.uniq{|s| s.first}
-  arr.combination(2).to_a.uniq.flat_map{|x| return x == n ? true : false }
+  return false unless arr.length > 1
+  arr.combination(2).to_a.map{|x| x.reduce(:+) }.include?(n)
   # YOUR CODE HERE
 end
 
