@@ -17,7 +17,6 @@ end
 def sum_to_n? arr, n
   return false unless arr.length > 1
   arr.combination(2).to_a.map{|x| x.reduce(:+) }.include?(n)
-  # YOUR CODE HERE
 end
 
 # Part 2
