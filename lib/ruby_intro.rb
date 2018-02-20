@@ -3,14 +3,20 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  if arr.empty? then return 0 end
+  arr.reduce(:+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+#  sum arr unless arr.length > 2
+  if arr.empty? then return 0 end
+  if arr.length < 2 then sum arr end
+  arr.sort{|x,y| y <=> x}.take(2).reduce(:+)
 end
 
 def sum_to_n? arr, n
+  puts arr.combination(2).to_a.uniq{|s| s.first}
+  arr.combination(2).to_a.uniq.flat_map{|x| return x == n ? true : false }
   # YOUR CODE HERE
 end
 
